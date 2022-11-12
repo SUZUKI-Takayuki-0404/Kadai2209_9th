@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 public class NameController {
 
-    private NameMapper nameMapper;
+    private final NameMapper nameMapper;
 
 
     public NameController(NameMapper nameMapper) {
@@ -18,8 +18,6 @@ public class NameController {
     @GetMapping("/names")
     public List<Name> getNames(){
 
-        List<Name> names = nameMapper.findAll();
-
-        return names;
+        return nameMapper.findAll();
     }
 }
