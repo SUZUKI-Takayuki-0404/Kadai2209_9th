@@ -10,14 +10,12 @@ public class NameController {
 
     private final NameMapper nameMapper;
 
-
     public NameController(NameMapper nameMapper) {
         this.nameMapper = nameMapper;
     }
 
     @GetMapping("/names")
     public List<Name> getNames(){
-
         return nameMapper.findAll();
     }
 }
