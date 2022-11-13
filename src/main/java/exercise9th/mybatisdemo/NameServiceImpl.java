@@ -19,6 +19,7 @@ public class NameServiceImpl implements NameService{
         return nameMapper.findAll();
     }
 
+    @Override
     public Name findById(int id) throws Exception{
          return nameMapper.findById(id).get();
     }
