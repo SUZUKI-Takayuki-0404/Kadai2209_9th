@@ -1,5 +1,6 @@
 package exercise9th.mybatisdemo;
 
+import org.apache.coyote.Response;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,13 +17,13 @@ public class NameController {
     }
 
     @GetMapping("/names")
-    public List<Name> getNames(){
-        return nameService.findAll();
+    public List<NameResponse> getNames(){
+        return nameService.findAll().stream().map(NameResponse::new).toList();
     }
 
     @GetMapping("/names/{id}")
-    public List<Name> getNameById(@PathVariable("id") int id) throws Exception {
-        return List.of(nameService.findById(id));
+    public NameResponse getNameById(@PathVariable("id") int id) throws Exception {
+        return new NameResponse(nameService.findById(id));
     }
 
 }

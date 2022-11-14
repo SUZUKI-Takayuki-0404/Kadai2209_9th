@@ -1,5 +1,6 @@
 package exercise9th.mybatisdemo;
 
+import exercise9th.mybatisdemo.entity.Name;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 

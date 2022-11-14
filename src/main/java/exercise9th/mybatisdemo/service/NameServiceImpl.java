@@ -1,9 +1,10 @@
 package exercise9th.mybatisdemo;
 
+import exercise9th.mybatisdemo.entity.Name;
+import exercise9th.mybatisdemo.mapper.NameMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class NameServiceImpl implements NameService{

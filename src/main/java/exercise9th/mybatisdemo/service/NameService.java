@@ -1,5 +1,7 @@
 package exercise9th.mybatisdemo;
 
+import exercise9th.mybatisdemo.entity.Name;
+
 import java.util.List;
 
 public interface NameService {
