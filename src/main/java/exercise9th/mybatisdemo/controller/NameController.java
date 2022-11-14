@@ -1,6 +1,6 @@
-package exercise9th.mybatisdemo;
+package exercise9th.mybatisdemo.controller;
 
-import org.apache.coyote.Response;
+import exercise9th.mybatisdemo.service.NameService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
