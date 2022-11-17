@@ -1,6 +1,7 @@
 package exercise9th.mybatisdemo.service;
 
 import exercise9th.mybatisdemo.entity.Name;
+import exercise9th.mybatisdemo.exceptionhandlers.NameNotFoundException;
 import exercise9th.mybatisdemo.mapper.NameMapper;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class NameServiceImpl implements NameService{
         if(nameMapper.findById(id).isPresent()){
             return nameMapper.findById(id).get();
         }else{
-            throw new RuntimeException("Not Found");
+            throw new NameNotFoundException("ID:"+id+" Not Found");
         }
     }
 
