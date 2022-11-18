@@ -3,6 +3,7 @@ package exercise9th.mybatisdemo.controller;
 import exercise9th.mybatisdemo.entity.Name;
 
 public class NameResponse {
+    
     private int id;
     private String name;
 
