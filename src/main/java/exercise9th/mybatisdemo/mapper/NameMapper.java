@@ -1,5 +1,6 @@
-package exercise9th.mybatisdemo;
+package exercise9th.mybatisdemo.mapper;
 
+import exercise9th.mybatisdemo.entity.Name;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -11,5 +12,8 @@ public interface NameMapper {
 
     @Select("SELECT * FROM names")
     List<Name> findAll();
+
+    @Select("SELECT * FROM names WHERE id = #{id}")
+    Optional<Name> findById(int id);
 
 }

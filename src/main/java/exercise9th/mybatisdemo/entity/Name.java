@@ -1,4 +1,4 @@
-package exercise9th.mybatisdemo;
+package exercise9th.mybatisdemo.entity;
 
 public class Name {
 
