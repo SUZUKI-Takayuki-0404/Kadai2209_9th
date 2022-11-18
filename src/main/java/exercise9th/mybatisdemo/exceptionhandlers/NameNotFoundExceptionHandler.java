@@ -1,6 +1,5 @@
 package exercise9th.mybatisdemo.exceptionhandlers;
 
-import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -16,7 +15,7 @@ import java.util.Map;
 public class NameNotFoundExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = NameNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleNoNameFound(@NotNull NameNotFoundException e, @NotNull HttpServletRequest request) {
+    public ResponseEntity<Map<String, String>> handleNoNameFound(NameNotFoundException e, HttpServletRequest request) {
 
         Map<String, String> body = new HashMap<>();
         body.put("timestamp", ZonedDateTime.now().toString());

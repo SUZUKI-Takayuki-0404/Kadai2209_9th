@@ -3,8 +3,7 @@ package exercise9th.mybatisdemo.entity;
 public class Name {
 
     private int id;
-
-    private String  name;
+    private String name;
 
     public Name(int id, String name) {
         this.id = id;
