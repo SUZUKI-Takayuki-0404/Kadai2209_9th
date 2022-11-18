@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class NameServiceImpl implements NameService{
+public class NameServiceImpl implements NameService {
 
     private NameMapper nameMapper;
 
@@ -16,15 +16,15 @@ public class NameServiceImpl implements NameService{
     }
 
     @Override
-    public List<Name> findAll(){
+    public List<Name> findAll() {
         return nameMapper.findAll();
     }
 
     @Override
-    public Name findById(int id) throws Exception{
-        if(nameMapper.findById(id).isPresent()){
+    public Name findById(int id) throws Exception {
+        if (nameMapper.findById(id).isPresent()) {
             return nameMapper.findById(id).get();
-        }else{
+        } else {
             throw new RuntimeException("Not Found");
         }
     }
