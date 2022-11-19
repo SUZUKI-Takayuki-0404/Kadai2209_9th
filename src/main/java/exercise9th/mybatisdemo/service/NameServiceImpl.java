@@ -3,19 +3,16 @@ package exercise9th.mybatisdemo.service;
 import exercise9th.mybatisdemo.entity.Name;
 import exercise9th.mybatisdemo.exceptionhandlers.NameNotFoundException;
 import exercise9th.mybatisdemo.mapper.NameMapper;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class NameServiceImpl implements NameService {
 
-    private NameMapper nameMapper;
-
-    public NameServiceImpl(NameMapper nameMapper) {
-        this.nameMapper = nameMapper;
-    }
+    private final NameMapper nameMapper;
 
     @Override
     public List<Name> findAll() {
@@ -24,12 +21,7 @@ public class NameServiceImpl implements NameService {
 
     @Override
     public Name findById(int id) throws Exception {
-        Optional<Name> nameOptional = nameMapper.findById(id);
-        if (nameOptional.isPresent()) {
-            return nameOptional.get();
-        } else {
-            throw new NameNotFoundException("ID:" + id + " Not Found");
-        }
+        return nameMapper.findById(id).orElseThrow(() -> new NameNotFoundException("ID:" + id + " Not Found"));
     }
 
 }
