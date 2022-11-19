@@ -3,16 +3,16 @@ package exercise9th.mybatisdemo.service;
 import exercise9th.mybatisdemo.entity.Name;
 import exercise9th.mybatisdemo.exceptionhandlers.NameNotFoundException;
 import exercise9th.mybatisdemo.mapper.NameMapper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Service
 public class NameServiceImpl implements NameService {
 
-    private NameMapper nameMapper;
+    private final NameMapper nameMapper;
 
     @Override
     public List<Name> findAll() {
