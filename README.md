@@ -1,5 +1,3 @@
-# Kadai2209_9th
-
 ## 概要
 ### MyBatisを使用したREAD処理の実装
 - ControllerクラスにfindByIdメソッドを実装し、idから該当者名を出力できるようにする
